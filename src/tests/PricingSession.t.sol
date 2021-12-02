@@ -10,7 +10,7 @@ contract PricingSessionTest is DSTest {
     PricingSession pricingSession;
 
     function setUp() public {
-        pricingSession = new PricingSession();
+        // pricingSession = new PricingSession();
     }
 
     function testFail_basic_sanity() public {

@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-import {Auth} from "solmate/auth/Auth.sol";
+import {Auth, Authority} from "solmate/auth/Auth.sol";
 
 /// @title Ambits
 /// @notice Adapted Abacus Pricing Sessions
@@ -30,13 +30,13 @@ contract Ambits is Auth {
     // Owner
     msg.sender,
     // Authority
-    msg.sender
+    Authority(msg.sender)
   ) {
-    session_ambits = PricingAmbits {
-      uint256 lowerBound,
-      uint256 upperBound,
-      uint256 value
-    };
+    session_ambits = PricingAmbits(
+      lowerBound,
+      upperBound,
+      value
+    );
   }
 
 
